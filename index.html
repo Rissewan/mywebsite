@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechEstate Realty Group | Philippines' Premier Real Estate Services</title>
+  <meta name="description" content="TechEstate Realty Group - The #1 real estate brokerage in the Philippines with over 18 years of experience helping clients buy and sell properties.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #102314;
+      --secondary: #1a3a2a;
+      --accent: #d4af37;
+      --light: #f8f8f8;
+      --dark: #1d1d1d;
+      --text: #333333;
+      --text-light: #777777;
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.7; 
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .btn:hover {
+      background: #c9a227;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    
+    .btn-outline:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    
+    /* Header Styles */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .logo span {
+      color: var(--accent);
+    }
+    
+    /* Navigation */
+    nav {
+      position: relative;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    .nav-links a {
+      color: white;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('house.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Team Section */
+    .team {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+    }
+    
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .member {
+      background: white;
+      color: var(--text);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+    
+    .member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .member-img {
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .member-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .member:hover .member-img img {
+      transform: scale(1.1);
+    }
+    
+    .member-info {
+      padding: 20px;
+    }
+    
+    .member-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    
+    .member-info p {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .social-links a {
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+    }
+    
+    /* Listings Section */
+    .listings {
+      padding: 80px 0;
+      background: var(--light);
+    }
+    
+    .listing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .listing {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .listing:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .listing-img {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .listing-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .listing:hover .listing-img img {
+      transform: scale(1.05);
+    }
+    
+    .listing-info {
+      padding: 20px;
+    }
+    
+    .listing-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .listing-details {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    
+    .price {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    /* Consultation Section */
+    .consultation {
+      background: var(--dark);
+      color: white;
+      padding: 80px 0;
+    }
+    
+    .consultation-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    
+    .consultation-img {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .consultation-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .consultation-content {
+      flex: 1;
+    }
+    
+    .consultation-content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    
+    .consultation-content p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    /* Stats Section */
+    .stats {
+      background: var(--secondary);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .stat-item {
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    .stat-text {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    /* Reviews Section */
+    .reviews {
+      padding: 80px 0;
+      background: var(--light);
+    }
+    
+    .review-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 30px;
+      padding-bottom: 30px;
+      scrollbar-width: none;
+    }
+    
+    .review-slider::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .review-card {
+      flex: 0 0 350px;
+      scroll-snap-align: start;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stars {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .review-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .review-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .slider-btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .slider-btn.active {
+      background: var(--accent);
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(rgba(16, 35, 20, 0.9), rgba(16, 35, 20, 0.9)), url('cta-bg.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-info {
+      color: #ccc;
+    }
+    
+    .contact-info p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .contact-info i {
+      color: var(--accent);
+      margin-top: 3px;
+    }
+    
+    .social-footer {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-footer a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-footer a:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .consultation-container {
+        flex-direction: column;
+      }
+      
+      .consultation-img, .consultation-content {
+        flex: none;
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: left 0.3s ease;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 80px 20px;
+      }
+      
+      .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+      
+      .team-members, .listing-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">Tech<span>Estate</span></a>
+      
+      <nav>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#consultation">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact" class="btn btn-outline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find Your Dream Home in the Philippines</h1>
+      <p>With over 18 years of experience, we help you navigate the real estate market with confidence and ease.</p>
+      <div class="hero-btns">
+        <a href="#listings" class="btn">Browse Properties</a>
+        <a href="#contact" class="btn btn-outline">Get a Free Valuation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meet Our Expert Team</h2>
+      </div>
+      
+      <div class="team-members">
+        <div class="member">
+          <div class="member-img">
+            <img src="person1.jpg" alt="Shawn Garcia">
+          </div>
+          <div class="member-info">
+            <h3>Shawn Garcia</h3>
+            <p>President / Broker</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="member">
+          <div class="member-img">
+            <img src="person2.jpg" alt="Neil Tran">
+          </div>
+          <div class="member-info">
+            <h3>Neil Tran</h3>
+            <p>Real Estate Agent</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="member">
+          <div class="member-img">
+            <img src="person3.jpg" alt="Estelle Darcy">
+          </div>
+          <div class="member-info">
+            <h3>Estelle Darcy</h3>
+            <p>Real Estate Agent</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="member">
+          <div class="member-img">
+            <img src="person4.jpg" alt="Olivia Wilson">
+          </div>
+          <div class="member-info">
+            <h3>Olivia Wilson</h3>
+            <p>Real Estate Agent</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="listings" id="listings">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Properties</h2>
+      </div>
+      
+      <div class="listing-cards">
+        <div class="listing">
+          <div class="listing-img">
+            <img src="house1.jpg" alt="1211 Waverunner Avenue">
+          </div>
+          <div class="listing-info">
+            <h3>1211 Waverunner Avenue</h3>
+            <div class="listing-details">
+              <span><i class="fas fa-bed"></i> 4 beds</span>
+              <span><i class="fas fa-bath"></i> 3 baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 220 sqm</span>
+            </div>
+            <div class="price">₱12,500,000</div>
+          </div>
+        </div>
+        
+        <div class="listing">
+          <div class="listing-img">
+            <img src="house2.jpg" alt="404 Hillsdown Hill">
+          </div>
+          <div class="listing-info">
+            <h3>404 Hillsdown Hill</h3>
+            <div class="listing-details">
+              <span><i class="fas fa-bed"></i> 5 beds</span>
+              <span><i class="fas fa-bath"></i> 4 baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 350 sqm</span>
+            </div>
+            <div class="price">₱18,750,000</div>
+          </div>
+        </div>
+        
+        <div class="listing">
+          <div class="listing-img">
+            <img src="house3.jpg" alt="48 Mendenhall Drive">
+          </div>
+          <div class="listing-info">
+            <h3>48 Mendenhall Drive</h3>
+            <div class="listing-details">
+              <span><i class="fas fa-bed"></i> 3 beds</span>
+              <span><i class="fas fa-bath"></i> 2 baths</span>
+              <span><i class="fas fa-ruler-combined"></i> 180 sqm</span>
+            </div>
+            <div class="price">₱9,200,000</div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="#" class="btn">View All Properties</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="consultation" id="consultation">
+    <div class="container">
+      <div class="consultation-container">
+        <div class="consultation-img">
+          <img src="interior.jpg" alt="Real Estate Consultation">
+        </div>
+        <div class="consultation-content">
+          <h2>Personalized Property Consultation</h2>
+          <p>Our expert agents provide tailored advice whether you're buying, selling, or investing in Philippine real estate. We analyze market trends, property values, and investment potential to help you make informed decisions.</p>
+          <p>Schedule a free 30-minute consultation to discuss your real estate goals and learn how we can help you achieve them.</p>
+          <a href="#contact" class="btn">Schedule Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">#1</div>
+          <div class="stat-text">Real Estate Group in the Philippines</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">18+</div>
+          <div class="stat-text">Years of Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">250+</div>
+          <div class="stat-text">Properties Sold Annually</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">₱50K</div>
+          <div class="stat-text">Average Savings Per Client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-title">
+        <h2>Client Testimonials</h2>
+      </div>
+      
+      <div class="review-slider">
+        <div class="review-card">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="review-text">"TechEstate made selling our family home a seamless experience. Their market knowledge and negotiation skills got us 15% above our asking price. Highly recommended!"</p>
+          <p class="review-author">- Maria L., Quezon City</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"As a first-time home buyer, I was nervous about the process. Neil from TechEstate guided me through every step and found me the perfect condo in Makati within my budget."</p>
+          <p class="review-author">- John R., Makati</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="review-text">"Very professional and honest service. They helped us find an investment property that's already appreciated by 20% in just two years. Will definitely work with them again."</p>
+          <p class="review-author">- Liza C., Alabang</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"The team at TechEstate handled the sale of my parents' house with such care and professionalism. They managed all the paperwork and got us multiple offers within a week."</p>
+          <p class="review-author">- Michael T., BGC</p>
+        </div>
+      </div>
+      
+      <div class="slider-controls">
+        <button class="slider-btn active"></button>
+        <button class="slider-btn"></button>
+        <button class="slider-btn"></button>
+        <button class="slider-btn"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Ready to Begin Your Real Estate Journey?</h2>
+      <p>Whether you're buying, selling, or investing, our team of experts is here to guide you every step of the way. Contact us today for a free consultation.</p>
+      <a href="#" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>TechEstate Realty</h3>
+          <p>Philippines' premier real estate brokerage with over 18 years of experience helping clients achieve their property goals.</p>
+          <div class="social-footer">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#listings">Properties</a></li>
+            <li><a href="#consultation">Services</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Buying Assistance</a></li>
+            <li><a href="#">Selling Assistance</a></li>
+            <li><a href="#">Property Valuation</a></li>
+            <li><a href="#">Investment Consulting</a></li>
+            <li><a href="#">Property Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Balingasag,Misamis Oriental</p>
+            <p><i class="fas fa-phone"></i> +63 9127372155</p>
+            <p><i class="fas fa-envelope"></i> info@techestate.com</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 TechEstate Realty Group. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+    
+    // Review Slider
+    const slider = document.querySelector('.review-slider');
+    const slides = document.querySelectorAll('.review-card');
+    const dots = document.querySelectorAll('.slider-btn');
+    let currentSlide = 0;
+    
+    function updateSlider() {
+      slider.scrollTo({
+        left: slides[currentSlide].offsetLeft - slider.offsetLeft,
+        behavior: 'smooth'
+      });
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlider();
+      });
+    });
+    
+    // Auto-advance slides
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlider();
+    }, 5000);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
